@@ -1,0 +1,1594 @@
+:root {
+  --nm-light-bg: #EEF0F4;
+  --nm-light-shadow-light: #FFFFFF;
+  --nm-light-shadow-dark: #D9DADE;
+  --nm-light-shadow:
+    2px 2px 4px var(--nm-light-shadow-dark),
+    -2px -2px 4px var(--nm-light-shadow-light),
+    inset 2px 2px 4px #0000,
+    inset -2px -2px 4px #0000;
+  --nm-light-inshadow:
+    2px 2px 4px #0000,
+    -2px -2px 4px #0000,
+    inset 2px 2px 4px var(--nm-light-shadow-dark),
+    inset -2px -2px 4px var(--nm-light-shadow-light);
+  --nm-light-txtshadow:
+    1.5px 1.5px 3px var(--nm-light-shadow-dark),
+    -1.5px -1.5px 3px var(--nm-light-shadow-light);
+  --nm-light-favshadow:
+    1.5px 1.5px 3px #F3005C30,
+    -1.5px -1.5px 3px var(--nm-light-shadow-light);
+  --nm-light-rtshadow:
+    1.5px 1.5px 3px #00B36350,
+    -1.5px -1.5px 3px var(--nm-light-shadow-light);
+  --nm-light-replyshadow:
+    1.5px 1.5px 3px #00A3FA30,
+    -1.5px -1.5px 3px var(--nm-light-shadow-light);
+  --nm-dark-bg: #2F3030;
+  --nm-dark-shadow-light: #444445;
+  --nm-dark-shadow-dark: #252525;
+  --nm-dark-shadow:
+    2px 2px 4px var(--nm-dark-shadow-dark),
+    -2px -2px 4px var(--nm-dark-shadow-light),
+    inset 2px 2px 4px #0000,
+    inset -2px -2px 4px #0000;
+  --nm-dark-inshadow:
+    2px 2px 4px #0000,
+    -2px -2px 4px #0000,
+    inset 2px 2px 4px var(--nm-dark-shadow-dark),
+    inset -2px -2px 4px var(--nm-dark-shadow-light);
+  --nm-dark-txtshadow:
+    1.5px 1.5px 3px var(--nm-dark-shadow-dark),
+    -1.5px -1.5px 3px var(--nm-dark-shadow-light);
+  --nm-dark-favshadow:
+    -1.5px -1.5px 3px #F3005C30,
+    1.5px 1.5px 3px var(--nm-dark-shadow-dark);
+  --nm-dark-rtshadow:
+    -1.5px -1.5px 3px #00B36350,
+    1.5px 1.5px 3px var(--nm-dark-shadow-dark);
+  --nm-dark-replyshadow:
+    -1.5px -1.5px 3px #00A3FA30,
+    1.5px 1.5px 3px var(--nm-dark-shadow-dark);
+}
+
+
+
+* {
+  -webkit-appearance: none;
+  appearance: none;
+  transition: box-shadow .1s;
+}
+
+
+
+html:not(.dark) body,
+html:not(.dark) .js-app-content,
+html:not(.dark) .js-app-columns-container,
+html:not(.dark) .js-app-content .js-column,
+html:not(.dark) .js-app-content .column-panel,
+html:not(.dark) .js-column-header,
+html:not(.dark) .column-header,
+html:not(.dark) .column-header-temp,
+html:not(.dark) .js-stream-item,
+html:not(.dark) div[data-testid='trend'],
+html:not(.dark) .js-submittable-input,
+html:not(.dark) .js-app-content .js-column-detail,
+html:not(.dark) .js-detail-header,
+html:not(.dark) .js-app-content .js-tweet-detail,
+html:not(.dark) .js-app-content .js-detail-container,
+html:not(.dark) .js-detail-view-inline,
+html:not(.dark) .js-detail-view-inline-text,
+html:not(.dark) .js-inline-reply,
+html:not(.dark) .js-media-sensitive-overlay,
+html:not(.dark) .js-media-sensitive-overlay .media-sensitive-title ~ a,
+html:not(.dark) [data-testid='columnOptions'],
+html:not(.dark) .js-send-button,
+html:not(.dark) .cjp,
+html:not(.dark) .js-progress-svg > svg,
+html:not(.dark) .js-conversation-show-more,
+html:not(.dark) .js-add-to-customtimeline-button,
+html:not(.dark) .social-proof-for-tweet-title,
+html:not(.dark) .js-stream-item .js-user-actions-menu,
+html:not(.dark) .js-docked-compose,
+html:not(.dark) .js-compose-header,
+html:not(.dark) .js-add-image-button,
+html:not(.dark) .js-schedule-button,
+html:not(.dark) .js-tweet-type-button > button,
+html:not(.dark) .js-compose-message-recipient-input-container.bg-color-twitter-white,
+html:not(.dark) .js-compose-message-account,
+html:not(.dark) .compose .js-typeahead-dropdown,
+html:not(.dark) .js-compose-text ~ .lst-modal.typeahead,
+html:not(.dark) .js-in-reply-to,
+html:not(.dark) .ovl,
+html:not(.dark) .overlay,
+html:not(.dark) .mdl,
+html:not(.dark) .js-modal,
+html:not(.dark) .js-modal-panel,
+html:not(.dark) .mdl-header,
+html:not(.dark) #open-modal .js-item-launch,
+html:not(.dark) .l-column.mdl-column-med,
+html:not(.dark) .mdl-buttonbar button,
+html:not(.dark) .lst-group > input,
+html:not(.dark) .js-left-pinned-bottom button,
+html:not(.dark) .js-action-header-button,
+html:not(.dark) #lists-modal .column-header > .js-action-header-export-button,
+html:not(.dark) #lists-modal .list-listmember,
+html:not(.dark) #lists-modal .list-listmember button,
+html:not(.dark) .js-copy-users-input + div button,
+html:not(.dark) .js-multiple-users-input + div button,
+html:not(.dark) #actions-modal .js-action-button,
+html:not(.dark) .js-embed-textarea,
+html:not(.dark) .js-copy-button,
+html:not(.dark) .js-modals-container .js-component .js-follow-button > button,
+html:not(.dark) .js-modals-container .js-modal-content > .l-table .js-btn-fav > button,
+html:not(.dark) #actions-modal .control-group > li.margin-b--10,
+html:not(.dark) #actions-modal .frm > .js-create-list,
+html:not(.dark) .js-modals-container button.js-dismiss.Button--primary,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-follow-status,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch,
+html:not(.dark) .js-search-in-popover > .js-popover {
+  background-color: var(--nm-light-bg) !important;
+}
+html:not(.dark) .js-column-header,
+html:not(.dark) .column-header,
+html:not(.dark) .column-header-temp,
+html:not(.dark) .js-stream-item,
+html:not(.dark) div[data-testid='trend'],
+html:not(.dark) .js-detail-header,
+html:not(.dark) .js-media-sensitive-overlay .media-sensitive-title ~ a,
+html:not(.dark) [data-testid='columnOptions'],
+html:not(.dark) button.full-width[data-action='edit-customtimeline'],
+html:not(.dark) button.full-width[data-action='edit-list'],
+html:not(.dark) .js-send-button,
+html:not(.dark) .cjp,
+html:not(.dark) .media-badge[data-testid='pollBadge'],
+html:not(.dark) .js-progress-svg > svg,
+html:not(.dark) .js-conversation-show-more,
+html:not(.dark) .js-add-to-customtimeline-button,
+html:not(.dark) .social-proof-for-tweet-title,
+html:not(.dark) .js-stream-item .js-user-actions-menu,
+html:not(.dark) .js-compose-header,
+html:not(.dark) .js-account-selector-grid-toggle,
+html:not(.dark) .js-add-image-button,
+html:not(.dark) .js-schedule-button,
+html:not(.dark) .js-tweet-type-button > button,
+html:not(.dark) .compose .js-typeahead-dropdown,
+html:not(.dark) .js-compose-message-recipient,
+html:not(.dark) .js-compose-text ~ .lst-modal.typeahead,
+html:not(.dark) .compose .js-quote-detail,
+html:not(.dark) .js-in-reply-to,
+html:not(.dark) .mdl-header,
+html:not(.dark) #open-modal .js-item-launch,
+html:not(.dark) .mdl-buttonbar button,
+html:not(.dark) .js-left-pinned-bottom button,
+html:not(.dark) .l-column .js-action-header-button,
+html:not(.dark) button.js-submittable-input,
+html:not(.dark) #lists-modal .column-header > .js-action-header-export-button,
+html:not(.dark) #lists-modal .list-listmember,
+html:not(.dark) #lists-modal .list-listmember button,
+html:not(.dark) .js-copy-users-input + div button,
+html:not(.dark) .js-multiple-users-input + div button,
+html:not(.dark) .js-add-multiple,
+html:not(.dark) #settings-modal .lst-group > li:not(.selected),
+html:not(.dark) #global_filter_settings .js-add-filter,
+html:not(.dark) #global_filter_settings .list-filter,
+html:not(.dark) #global_filter_settings .js-remove-filter,
+html:not(.dark) #actions-modal .js-action-button,
+html:not(.dark) .js-copy-button,
+html:not(.dark) .js-modals-container .js-component .js-follow-button > button,
+html:not(.dark) .js-modals-container .js-modal-content > .l-table .js-btn-fav > button,
+html:not(.dark) #actions-modal .control-group > li.margin-b--10,
+html:not(.dark) #actions-modal .frm > .js-create-list,
+html:not(.dark) .js-modals-container .modal-content-with-border,
+html:not(.dark) .js-modals-container button.js-dismiss.Button--primary,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch,
+html:not(.dark) .js-search .js-search-input-control {
+  box-shadow: var(--nm-light-shadow) !important;
+}
+html:not(.dark) .js-column .js-quote-detail,
+html:not(.dark) .js-submittable-input:not(button),
+html:not(.dark) .js-detail-view-inline-text,
+html:not(.dark) .js-media-sensitive-overlay,
+html:not(.dark) .js-media-sensitive-overlay .media-sensitive-title ~ a:active,
+html:not(.dark) .controls :is(select, textarea, input:not([type='checkbox'], [type='radio'])),
+html:not(.dark) .js-geo-search,
+html:not(.dark) button.full-width[data-action='edit-customtimeline']:active,
+html:not(.dark) button.full-width[data-action='edit-list']:active,
+html:not(.dark) .compose-text-container,
+html:not(.dark) .js-send-button:active,
+html:not(.dark) .cjp:active,
+html:not(.dark) .js-conversation-show-more:active,
+html:not(.dark) .js-stream-item.gap-chirp:active,
+html:not(.dark) .js-add-to-customtimeline-button:active,
+html:not(.dark) .js-stream-item .js-user-actions-menu:active,
+html:not(.dark) .js-add-image-button:active,
+html:not(.dark) .js-schedule-button:not(.is-disabled):active,
+html:not(.dark) .js-tweet-type-button > button:not(.is-disabled):active,
+html:not(.dark) .js-compose-message-account.light-on-dark,
+html:not(.dark) #open-modal .js-item-launch:active,
+html:not(.dark) .js-modal:not(#settings-modal) .l-column,
+html:not(.dark) .mdl-buttonbar button:active,
+html:not(.dark) .lst-group > input,
+html:not(.dark) .js-left-pinned-bottom button:active,
+html:not(.dark) .l-column .js-action-header-button:active,
+html:not(.dark) button.js-submittable-input:active,
+html:not(.dark) #lists-modal .column-header > .js-action-header-export-button:active,
+html:not(.dark) #lists-modal .list-listmember button:active,
+html:not(.dark) .js-copy-users-input,
+html:not(.dark) .js-multiple-users-input,
+html:not(.dark) .js-copy-users-input + div button:active,
+html:not(.dark) .js-multiple-users-input + div button:active,
+html:not(.dark) .search-input-list input,
+html:not(.dark) .js-add-multiple:active,
+html:not(.dark) #settings-modal .lst-group > li.selected,
+html:not(.dark) #settings-modal .lst-group > li:active,
+html:not(.dark) #global_filter_settings .js-add-filter:active,
+html:not(.dark) #global_filter_settings .js-remove-filter:active,
+html:not(.dark) #actions-modal .js-inreply,
+html:not(.dark) #actions-modal .js-action-button:active,
+html:not(.dark) .js-embed-textarea,
+html:not(.dark) .js-copy-button:active,
+html:not(.dark) .js-modals-container .js-modal-content > .width--490 > .flex > input,
+html:not(.dark) .js-modals-container .js-component .js-follow-button:active > button,
+html:not(.dark) .js-modals-container .js-modal-content > .l-table .js-btn-fav:active > button,
+html:not(.dark) #actions-modal .frm > .js-create-list:active,
+html:not(.dark) .js-modals-container button.js-dismiss.Button--primary:active,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button:active > button,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu:active,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch:active,
+html:not(.dark) .quoted-tweet-unavailable,
+html:not(.dark) .js-search .js-app-search-input {
+  box-shadow: var(--nm-light-inshadow) !important;
+}
+html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .icon-reply,
+html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .js-icon-retweet,
+html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .js-icon-favorite,
+html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .icon-more {
+  color: var(--nm-light-bg) !important;
+  text-shadow: var(--nm-light-txtshadow) !important;
+}
+html:not(.dark)  :is(.tweet-footer, .tweet-detail-actions) .tweet-action.is-selected .icon-reply,
+html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .tweet-action:hover .icon-reply {
+  text-shadow: var(--nm-light-replyshadow) !important;
+}
+html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .js-icon-retweet.icon-retweet-filled::before {
+  text-shadow: var(--nm-light-rtshadow) !important;
+}
+html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .js-icon-favorite.icon-heart-filled::before {
+  text-shadow: var(--nm-light-favshadow) !important;
+}
+html:not(.dark) .column-header .column-header-link,
+html:not(.dark) .accordion .is-active .accordion-header,
+html:not(.dark) .accordion .is-active .accordion-header:hover,
+html:not(.dark) .js-send-button,
+html:not(.dark) .cjp,
+html:not(.dark) .media-badge[data-testid='pollBadge'],
+html:not(.dark) .js-media-sensitive-overlay .media-sensitive-title ~ a,
+html:not(.dark) .js-inline-reply .pull-left > button > .icon,
+html:not(.dark) .social-proof-for-tweet-title,
+html:not(.dark) .js-stream-item .js-user-actions-menu > .icon,
+html:not(.dark) .js-account-selector-grid-toggle > a > .color-twitter-white,
+html:not(.dark) .js-compose-header > .js-compose-close,
+html:not(.dark) .compose-account-names > p,
+html:not(.dark) .js-add-image-button,
+html:not(.dark) .js-schedule-button,
+html:not(.dark) .js-tweet-type-button > button,
+html:not(.dark) .js-compose-message-recipient-container > .compose-text-title,
+html:not(.dark) .js-quote-tweet-remove .icon-close,
+html:not(.dark) .js-in-reply-to-remove,
+html:not(.dark) .js-dismiss > .icon-close,
+html:not(.dark) .btn > .column-type-icon,
+html:not(.dark) .btn > .column-type-icon:hover,
+html:not(.dark) .mdl-buttonbar button,
+html:not(.dark) .lst-group li.selected span,
+html:not(.dark) .js-left-pinned-bottom button,
+html:not(.dark) .js-action-header-button,
+html:not(.dark) button.js-submittable-input,
+html:not(.dark) .js-copy-users-input + div button,
+html:not(.dark) .js-multiple-users-input + div button,
+html:not(.dark) #global_filter_settings .js-add-filter,
+html:not(.dark) #actions-modal .js-action-button,
+html:not(.dark) .js-copy-button,
+html:not(.dark) .js-modals-container .js-component .js-follow-button > button,
+html:not(.dark) .js-modals-container .js-modal-content > .l-table .js-btn-fav > button,
+html:not(.dark) #actions-modal .frm > .js-create-list,
+html:not(.dark) .js-modals-container button.js-dismiss.Button--primary,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li > .js-action-url,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-names,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-names > a,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a > i {
+  color: #8899a6 !important;
+}
+html:not(.dark) .js-compose-header > .compose-title,
+html:not(.dark) .compose-account-names > b,
+html:not(.dark) .compose .js-typeahead-item.is-selected,
+html:not(.dark) .compose .typeahead-item.s-selected > div > :is(strong, span),
+html:not(.dark) .compose .typeahead-item.s-selected > p,
+html:not(.dark) .lst-group li.selected strong,
+html:not(.dark) .js-embed-textarea,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-follow-status,
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li > .js-action-url > strong {
+  color: #38444d !important;
+}
+html:not(.dark) .js-action-header-button.Button--danger,
+html:not(.dark) #global_filter_settings .js-remove-filter,
+html:not(.dark) .js-modals-container .js-component .js-follow-button > button:is(.js-action-unfollow, .js-action-unblock) {
+  color: #e0245e !important;
+}
+html:not(.dark) .compose-account-selected {
+  background-color: #38444d !important;
+}
+html:not(.dark) .js-detail-container .js-tweet-translation {
+  border-top: solid 1px #8899a6;
+}
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header {
+  border: solid 5px var(--nm-light-bg);
+}
+html:not(.dark) #open-modal .js-item-launch:is([data-type='privateMe'], [data-type='me']) .column-type-icon {
+  transform: translateX(-15px);
+  text-shadow: 15px 0 0 #8899a640, 30px 0 0 #8899a620 !important;
+}
+
+.dark body,
+.dark .js-app-content,
+.dark .js-app-columns-container,
+.dark .js-app-content .js-column,
+.dark .js-app-content .column-panel,
+.dark .js-column-header,
+.dark .column-header,
+.dark .column-header-temp,
+.dark .js-stream-item,
+.dark div[data-testid='trend'],
+.dark .js-submittable-input,
+.dark .js-app-content .js-column-detail,
+.dark .js-detail-header,
+.dark .js-app-content .js-tweet-detail,
+.dark .js-app-content .js-detail-container,
+.dark .js-detail-view-inline,
+.dark .js-detail-view-inline-text,
+.dark .js-inline-reply,
+.dark .js-media-sensitive-overlay,
+.dark .js-media-sensitive-overlay .media-sensitive-title ~ a,
+.dark [data-testid='columnOptions'],
+.dark .js-send-button,
+.dark .cjp,
+.dark .js-progress-svg > svg,
+.dark .js-conversation-show-more,
+.dark .js-add-to-customtimeline-button,
+.dark .social-proof-for-tweet-title,
+.dark .js-stream-item .js-user-actions-menu,
+.dark .js-docked-compose,
+.dark .js-compose-header,
+.dark .js-add-image-button,
+.dark .js-schedule-button,
+.dark .js-tweet-type-button > button,
+.dark .js-compose-message-recipient-input-container.bg-color-twitter-white,
+.dark .js-compose-message-account,
+.dark .compose .js-typeahead-dropdown,
+.dark .js-compose-text ~ .lst-modal.typeahead,
+.dark .js-in-reply-to,
+.dark .ovl,
+.dark .overlay,
+.dark .mdl,
+.dark .js-modal,
+.dark .js-modal-panel,
+.dark .mdl-header,
+.dark #open-modal .js-item-launch,
+.dark .l-column.mdl-column-med,
+.dark .mdl-buttonbar button,
+.dark .lst-group > input,
+.dark .js-left-pinned-bottom button,
+.dark .js-action-header-button,
+.dark #lists-modal .column-header > .js-action-header-export-button,
+.dark #lists-modal .list-listmember,
+.dark #lists-modal .list-listmember button,
+.dark .js-copy-users-input + div button,
+.dark .js-multiple-users-input + div button,
+.dark #actions-modal .js-action-button,
+.dark .js-embed-textarea,
+.dark .js-copy-button,
+.dark .js-modals-container .js-component .js-follow-button > button,
+.dark .js-modals-container .js-modal-content > .l-table .js-btn-fav > button,
+.dark #actions-modal .control-group > li.margin-b--10,
+.dark #actions-modal .frm > .js-create-list,
+.dark .js-modals-container button.js-dismiss.Button--primary,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-follow-status,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch,
+.dark .js-search-in-popover > .js-popover {
+  background-color: var(--nm-dark-bg) !important;
+}
+.dark .js-column-header,
+.dark .column-header,
+.dark .column-header-temp,
+.dark .js-stream-item,
+.dark div[data-testid='trend'],
+.dark .js-detail-header,
+.dark .js-media-sensitive-overlay .media-sensitive-title ~ a,
+.dark [data-testid='columnOptions'],
+.dark button.full-width[data-action='edit-customtimeline'],
+.dark button.full-width[data-action='edit-list'],
+.dark .js-send-button,
+.dark .cjp,
+.dark .media-badge[data-testid='pollBadge'],
+.dark .js-progress-svg > svg,
+.dark .js-conversation-show-more,
+.dark .js-add-to-customtimeline-button,
+.dark .social-proof-for-tweet-title,
+.dark .js-stream-item .js-user-actions-menu,
+.dark .js-compose-header,
+.dark .js-account-selector-grid-toggle,
+.dark .js-add-image-button,
+.dark .js-schedule-button,
+.dark .js-tweet-type-button > button,
+.dark .compose .js-typeahead-dropdown,
+.dark .js-compose-message-recipient,
+.dark .js-compose-text ~ .lst-modal.typeahead,
+.dark .compose .js-quote-detail,
+.dark .js-in-reply-to,
+.dark .mdl-header,
+.dark #open-modal .js-item-launch,
+.dark .mdl-buttonbar button,
+.dark .js-left-pinned-bottom button,
+.dark .l-column .js-action-header-button,
+.dark button.js-submittable-input,
+.dark #lists-modal .column-header > .js-action-header-export-button,
+.dark #lists-modal .list-listmember,
+.dark #lists-modal .list-listmember button,
+.dark .js-copy-users-input + div button,
+.dark .js-multiple-users-input + div button,
+.dark .js-add-multiple,
+.dark #settings-modal .lst-group > li:not(.selected),
+.dark #global_filter_settings .js-add-filter,
+.dark #global_filter_settings .list-filter,
+.dark #global_filter_settings .js-remove-filter,
+.dark #actions-modal .js-action-button,
+.dark .js-copy-button,
+.dark .js-modals-container .js-component .js-follow-button > button,
+.dark .js-modals-container .js-modal-content > .l-table .js-btn-fav > button,
+.dark #actions-modal .control-group > li.margin-b--10,
+.dark #actions-modal .frm > .js-create-list,
+.dark .js-modals-container .modal-content-with-border,
+.dark .js-modals-container button.js-dismiss.Button--primary,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch,
+.dark .js-search .js-search-input-control {
+  box-shadow: var(--nm-dark-shadow) !important;
+}
+.dark .js-column .js-quote-detail,
+.dark .js-submittable-input:not(button),
+.dark .js-detail-view-inline-text,
+.dark .js-media-sensitive-overlay,
+.dark .js-media-sensitive-overlay .media-sensitive-title ~ a:active,
+.dark .controls :is(select, textarea, input:not([type='checkbox'], [type='radio'])),
+.dark .js-geo-search,
+.dark button.full-width[data-action='edit-customtimeline']:active,
+.dark button.full-width[data-action='edit-list']:active,
+.dark .compose-text-container,
+.dark .js-send-button:active,
+.dark .cjp:active,
+.dark .js-conversation-show-more:active,
+.dark .js-stream-item.gap-chirp:active,
+.dark .js-add-to-customtimeline-button:active,
+.dark .js-stream-item .js-user-actions-menu:active,
+.dark .js-add-image-button:active,
+.dark .js-schedule-button:not(.is-disabled):active,
+.dark .js-tweet-type-button > button:not(.is-disabled):active,
+.dark .js-compose-message-account.light-on-dark,
+.dark #open-modal .js-item-launch:active,
+.dark .js-modal:not(#settings-modal) .l-column,
+.dark .mdl-buttonbar button:active,
+.dark .lst-group > input,
+.dark .js-left-pinned-bottom button:active,
+.dark .l-column .js-action-header-button:active,
+.dark button.js-submittable-input:active,
+.dark #lists-modal .column-header > .js-action-header-export-button:active,
+.dark #lists-modal .list-listmember button:active,
+.dark .js-copy-users-input,
+.dark .js-multiple-users-input,
+.dark .js-copy-users-input + div button:active,
+.dark .js-multiple-users-input + div button:active,
+.dark .search-input-list input,
+.dark .js-add-multiple:active,
+.dark #settings-modal .lst-group > li.selected,
+.dark #settings-modal .lst-group > li:active,
+.dark #global_filter_settings .js-add-filter:active,
+.dark #global_filter_settings .js-remove-filter:active,
+.dark #actions-modal .js-inreply,
+.dark #actions-modal .js-action-button:active,
+.dark .js-embed-textarea,
+.dark .js-copy-button:active,
+.dark .js-modals-container .js-modal-content > .width--490 > .flex > input,
+.dark .js-modals-container .js-component .js-follow-button:active > button,
+.dark .js-modals-container .js-modal-content > .l-table .js-btn-fav:active > button,
+.dark #actions-modal .frm > .js-create-list:active,
+.dark .js-modals-container button.js-dismiss.Button--primary:active,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button:active > button,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu:active,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch:active,
+.dark .quoted-tweet-unavailable,
+.dark .js-search .js-app-search-input {
+  box-shadow: var(--nm-dark-inshadow) !important;
+}
+.dark :is(.tweet-footer, .tweet-detail-actions) .icon-reply,
+.dark :is(.tweet-footer, .tweet-detail-actions) .js-icon-retweet,
+.dark :is(.tweet-footer, .tweet-detail-actions) .js-icon-favorite,
+.dark :is(.tweet-footer, .tweet-detail-actions) .icon-more {
+  color: var(--nm-dark-bg) !important;
+  text-shadow: var(--nm-dark-txtshadow) !important;
+}
+.dark  :is(.tweet-footer, .tweet-detail-actions) .tweet-action.is-selected .icon-reply,
+.dark :is(.tweet-footer, .tweet-detail-actions) .tweet-action:hover .icon-reply {
+  text-shadow: var(--nm-dark-replyshadow) !important;
+}
+.dark :is(.tweet-footer, .tweet-detail-actions) .js-icon-retweet.icon-retweet-filled::before {
+  text-shadow: var(--nm-dark-rtshadow) !important;
+}
+.dark :is(.tweet-footer, .tweet-detail-actions) .js-icon-favorite.icon-heart-filled::before {
+  text-shadow: var(--nm-dark-favshadow) !important;
+}
+.dark .column-header .column-header-link,
+.dark .accordion .is-active .accordion-header,
+.dark .accordion .is-active .accordion-header:hover,
+.dark .js-send-button,
+.dark .cjp,
+.dark .media-badge[data-testid='pollBadge'],
+.dark .js-media-sensitive-overlay .media-sensitive-title ~ a,
+.dark .js-inline-reply .pull-left > button > .icon,
+.dark .social-proof-for-tweet-title,
+.dark .js-compose-text,
+.dark .js-stream-item .js-user-actions-menu > .icon,
+.dark .js-account-selector-grid-toggle > a > .color-twitter-white,
+.dark .compose-account-names > :is(p,b),
+.dark .js-compose-message-account.light-on-dark,
+.dark .js-compose-message-recipient-container > .compose-text-title,
+.dark :is(.js-quote-detail, .js-in-reply-to) .fullname,
+.dark .js-quoted-tweet-text,
+.dark .js-in-reply-to .js-tweet-text,
+.dark .js-in-reply-to-remove,
+.dark .js-dismiss > .icon-close,
+.dark .btn>.column-type-icon,
+.dark .btn>.column-type-icon:hover,
+.dark .mdl-buttonbar button,
+.dark .lst-group li.selected :is(span, strong),
+.dark .js-action-header-button,
+.dark .js-compose-message-recipient > span,
+.dark #lists-modal .column-header > .js-action-header-export-button,
+.dark #lists-modal .list-listmember button i,
+.dark .list-twitter-list :is(p, i, span, strong),
+.dark .list-listmember .bio,
+.dark .js-copy-users-input + div button,
+.dark .js-multiple-users-input + div button,
+.dark .js-add-multiple,
+.dark #global_filter_settings .js-add-filter,
+.dark #actions-modal .js-action-button,
+.dark .js-embed-textarea,
+.dark .js-copy-button,
+.dark .js-modals-container .js-component .js-follow-button > button,
+.dark .js-modals-container .js-modal-content > .l-table .js-btn-fav > button,
+.dark #actions-modal .frm > .js-create-list,
+.dark .js-modals-container button.js-dismiss.Button--primary,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-follow-status,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li > .js-action-url > strong,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-names,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-names > a,
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a > i {
+  color: #ffffff !important;
+}
+.dark .js-action-header-button.Button--danger,
+.dark #global_filter_settings .js-remove-filter,
+.dark .js-modals-container .js-component .js-follow-button > button:is(.js-action-unfollow, .js-action-unblock) {
+  color: #e0245e !important;
+}
+.dark .compose-account-selected i:is(.color-twitter-white, .icon-check) {
+  color: var(--nm-dark-bg) !important;
+}
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li > .js-action-url:hover {
+  color: #8899a6 !important;
+}
+.dark .compose-account-selected {
+  background-color: #ffffff !important;
+}
+.dark .tweet-stats,
+.dark .js-stats-list {
+  border-color: #3d5466 !important;
+}
+.dark .js-detail-container .js-tweet-translation {
+  border-top: solid 1px #3d5466;
+}
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header {
+  border: solid 5px var(--nm-dark-bg);
+}
+.dark #open-modal .js-item-launch:is([data-type='privateMe'], [data-type='me']) .column-type-icon {
+  transform: translateX(-15px);
+  text-shadow: 15px 0 0 #fff4, 30px 0 0 #fff2 !important;
+}
+
+.js-modals-container .modal-content-with-border {
+  background-color: #fff !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl-header-inner-overlay {
+  background-color: #0003 !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header > div {
+  -webkit-text-stroke-color: #0005 !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header > div a.link-complex,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header > div a.prf-siteurl,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header > div a.url-ext {
+  color: #1da1f2 !important;
+}
+
+
+.column-content,
+.column-content.bg-color-twitter-white,
+.js-column-options-container,
+.column-options,
+.button-tray,
+.js-accordion-item,
+:is(select, textarea, input:not([type='checkbox'], [type='radio'])),
+.js-geo-search,
+button.full-width[data-action='edit-customtimeline'],
+button.full-width[data-action='edit-list'],
+.media-badge[data-testid='pollBadge'],
+:is(.js-inline-reply, .compose) .compose-text-container,
+:is(.js-inline-reply, .compose) .js-compose-text.bg-color-twitter-white,
+.compose-account-img,
+.compose .js-typeahead-item.is-selected,
+.compose .typeahead-item.s-selected,
+.compose .js-quote-tweet-holder.bg-color-twitter-white,
+.js-quote-tweet-remove .icon-close,
+.js-dismiss > .icon-close,
+.js-right-column > .js-column,
+.js-right-column .column-panel,
+.js-right-column .js-tweet-detail,
+.js-right-column .js-detail-container,
+.js-column-scroller.column-background-fill,
+.lst-group .selected .list-account,
+.lst-group li .list-account,
+.lst-group li .list-twitter-list,
+.lst-group li.selected,
+#settings-modal .lst-group > li,
+#settings-modal .list-link,
+.js-setting-list,
+#settings-modal .divider-bar,
+#actions-modal .mdl-inner,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-meta {
+  background-color: #0000 !important;
+}
+
+.column-number,
+[data-testid='locationLatLngText'] + div > .icon-translator,
+.js-media-sensitive-overlay .media-sensitive-title + p,
+.control-group .js-search-input-control .icon-search,
+.control-group .js-search-input-control .icon-close,
+.control-group .search-input-control .icon-calendar,
+.js-geo-search ~ .icon-close,
+.heartsprite,
+.reply-triangle,
+.js-detail-container .feature-customtimelines,
+.show-more-thread,
+.js-tweet-translation::before,
+.js-stream-item.gap-chirp::before,
+.js-stream-item.gap-chirp::after,
+.js-quoted-tweet-text ~ p.txt-mute,
+.js-chirp-container > .list-placeholder.pin-all,
+.js-column-message,
+.column-message,
+.js-quality-filter-info,
+.js-notification-filter-info,
+:not(.js-compose-message-recipient-container) > .compose-text-title,
+.js-add-image-button > span,
+.js-schedule-button > span,
+.js-tweet-type-button > button > span,
+.js-compose-hint,
+.replyto-caret,
+.js-item-launch.is-disabled,
+#open-modal .js-item-launch i ~ :is(div, span),
+.lst-group > h3,
+.js-modals-container fieldset > div > .controls > span:not(.js-character-count),
+.lst-group > .margin-a--16 > p:is(.padding-b--8, .padding-b--16),
+.lst-group > .margin-a--16 > .js-show-tip,
+#global_filter_settings > div:last-child,
+#settings-modal footer,
+#actions-modal .mdl-inner > h4,
+#actions-modal .js-tweet .js-show-this-thread,
+.embed-modal .modal-content > div > .margin-h--15 > span.block,
+.embed-modal .js-embed-textarea ~ p,
+.embed-modal .js-embed-loading-container,
+.js-modals-container .js-modal-content > .width--490 > p,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .lst-profile::before,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .lst-profile::after,
+.js-follow-button .icon-follow,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch i ~ :is(div, span),
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header p.location > strong {
+  display: none !important;
+}
+.js-stream-item,
+div[data-testid='trend'],
+.js-column-header,
+.column-header,
+.column-header-temp,
+.js-quote-detail,
+.js-submittable-input,
+.js-detail-view-inline,
+.js-detail-view-inline-text,
+.js-accordion-item,
+.facet-type,
+.with-column-divider-bottom,
+[data-testid='columnOptions'],
+.controls :is(select, textarea, input:not([type='checkbox'], [type='radio'])),
+.js-geo-search,
+.js-send-button,
+.cjp,
+.js-conversation-show-more,
+.gap-chirp-text,
+.tweet-detail-actions,
+.social-proof-for-tweet-title,
+.js-stream-item .js-user-actions-menu,
+.media-badge[data-testid='pollBadge'],
+.js-compose-header,
+.js-add-image-button,
+.js-schedule-button,
+.js-tweet-type-button > button,
+.js-compose-message-account.light-on-dark,
+.js-compose-message-recipient,
+.js-compose-text ~ .lst-modal.typeahead,
+.js-compose-text ~ .lst-modal.typeahead .typeahead-item,
+.mdl-content,
+.mdl-buttonbar button,
+.l-column,
+.lst-group > input,
+.js-left-pinned-bottom button,
+.js-action-header-button,
+#lists-modal .column-header > .js-action-header-export-button,
+#lists-modal .list-listmember button,
+.js-copy-users-input,
+.js-copy-users-input + div button,
+.js-multiple-users-input,
+.js-multiple-users-input + div button,
+.search-input-list input,
+.js-add-multiple,
+.dark .js-add-multiple,
+#global_filter_settings .js-add-filter,
+#global_filter_settings .js-remove-filter,
+#actions-modal .mdl-inner,
+#actions-modal .js-action-button,
+.js-embed-textarea,
+.js-modals-container .js-modal-content > .width--490 > .flex > .js-copy-button,
+.js-modals-container .js-modal-content > .width--490 > .flex > input,
+.js-modals-container .js-component .js-follow-button > button,
+.js-modals-container .js-modal-content > .l-table .js-btn-fav > button,
+.js-modals-container .modal-content-with-border,
+.js-modals-container button.js-dismiss.Button--primary,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-meta,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li > .js-action-url,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a,
+.quoted-tweet-unavailable,
+.js-search .js-app-search-input {
+  border: 0 !important;
+}
+.js-add-to-customtimeline-button:hover,
+.js-stream-item .js-user-actions-menu:focus,
+.compose-account-img,
+.mdl,
+#settings-modal .mdl-content > div.mdl-column-sml {
+  box-shadow: none !important;
+}
+
+
+.js-stream-item,
+[data-testid='columnOptions']{
+  overflow: hidden !important;
+}
+.js-column-header,
+.column-header,
+.column-header-temp,
+.js-stream-item,
+div[data-testid='trend'],
+.js-detail-header,
+[data-testid='columnOptions'],
+.mdl-header,
+#lists-modal .list-listmember,
+.js-copy-users-input,
+.js-copy-users-input + div,
+.js-multiple-users-input,
+.js-multiple-users-input + div,
+.js-embed-textarea,
+.js-modals-container .modal-content-with-border,
+.social-proof-for-tweet-title,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-profile-columns,
+.js-search .js-search-input-control {
+  width: 92% !important;
+  margin-right: 4% !important;
+  margin-left: 4% !important;
+}
+.js-column-scroller,
+.column-scroller,
+.js-detail-container,
+#lists-modal .column-content {
+  margin-top: -32px;
+  padding: 32px 0 !important;
+}
+.js-column-header,
+.column-header,
+.column-header-temp,
+.js-detail-header,
+.js-compose-header,
+.mdl-header,
+.js-search .js-search-input-control {
+  border-radius: 50px !important;
+  height: 50px !important;
+  margin-top: 4vmin !important;
+  position: relative !important;
+  z-index: 20041203 !important;
+}
+.js-stream-item,
+div[data-testid='trend'],
+.social-proof-for-tweet-title {
+  border-radius: 4vmin !important;
+  margin-top: 4vmin;
+}
+.js-app-columns {
+  padding: 0 !important;
+}
+.js-app-columns > .js-column:last-child {
+  margin: 0 !important;
+}
+.js-stream-item-content {
+  padding: 12px !important;
+}
+.js-quote-detail > div {
+  margin: 4px !important;
+}
+.js-quote-detail .js-media {
+  margin: 16px 0 !important;
+}
+.quoted-tweet-unavailable {
+  border-radius: 20px !important;
+  padding-right: 20px !important;
+}
+.js-media-sensitive-overlay {
+  padding: 12px !important;
+  font-size: 0 !important;
+}
+.js-media-sensitive-overlay .media-sensitive-title {
+  display: block !important;
+  font-size: 12px !important;
+}
+.js-media-sensitive-overlay .media-sensitive-title ~ a {
+  display: inline-block !important;
+  min-height: 24px !important;
+  padding: 6px 12px !important;
+  margin: 16px 16px 0 0 !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  vertical-align: baseline !important;
+  font-size: 12px !important;
+  line-height: 12px !important;
+  font-weight: 700 !important;
+}
+.tweet-detail-action-item {
+  width: 25% !important;
+}
+.js-stream-item .thread {
+  margin-bottom: 12px !important;
+}
+.js-add-to-customtimeline-input {
+  width: calc(92% + 4px) !important;
+  margin-right: calc(4% - 2px) !important;
+  margin-left: calc(4% - 2px) !important;
+}
+[data-testid='columnOptions'] {
+  border-radius: 32px;
+  margin-top: 4vmin;
+}
+.js-search-filter {
+  margin: 12px;
+}
+.button-tray {
+  margin: 6px 12px !important;
+}
+.radius-group {
+  margin-top: 6px !important;
+}
+.controls :is(select, input:not([type='checkbox'], [type='radio'])),
+.js-geo-search.padding-l--23 {
+  height: 32px !important;
+  border-radius: 16px !important;
+  padding: 0 12px !important;
+}
+.controls textarea {
+  border-radius: 16px !important;
+}
+.js-engagement-filter .controls > input {
+  width: 64px !important;
+}
+button.full-width[data-action='edit-customtimeline'],
+button.full-width[data-action='edit-list'],
+.dark button.full-width[data-action='edit-customtimeline'],
+.dark button.full-width[data-action='edit-list'] {
+  margin: 0 12px !important;
+  height: 32px !important;
+  border-radius: 16px !important;
+  width: calc(100% - 24px) !important;
+}
+.icon-geo ~ .icon-close {
+  top: 9px !important;
+  right: 12px !important;
+}
+:is(.tweet-footer, .tweet-detail-actions) .icon-reply::before {
+  content: '\\f511' !important
+}
+:is(.tweet-footer, .tweet-detail-actions) .js-icon-retweet::before {
+  content: '\\f512' !important
+}
+:is(.tweet-footer, .tweet-detail-actions) .js-icon-favorite::before {
+  content: '\\f514' !important
+}
+:is(.tweet-footer, .tweet-detail-actions) .icon-more::before {
+  content: '\\f650' !important
+}
+:is(.tweet-footer, .tweet-detail-actions) .icon-reply,
+:is(.tweet-footer, .tweet-detail-actions) .js-icon-retweet,
+:is(.tweet-footer, .tweet-detail-actions) .js-icon-favorite {
+  font-size: 24px !important;
+}
+.icon-favorite-toggle.is-invisible {
+  visibility: visible !important
+}
+.tweet-footer .tweet-action {
+  margin-top: 12px !important;
+}
+.tweet-footer .tweet-action > .icon + span {
+  font-weight: bold !important;
+  margin: 3px 0 0 12px !important;
+}
+.anim[rel=favorite] {
+  animation: none !important;
+}
+:is(.js-inline-reply, .compose) .compose-text-container.br--4 {
+  border-radius: 16px;
+  padding: 4px !important;
+}
+.js-detail-container .compose-text-container.br--4 {
+  border-radius: 20px !important;
+}
+.js-compose-text {
+  margin: 4px 0 40px !important;
+  padding-top: 0 !important;
+}
+.js-send-button.is-disabled,
+.cjp.is-disabled{
+  opacity: 1 !important;
+}
+.js-inline-reply > div > div:last-child {
+  padding: 0 4px !important;
+}
+.js-progress-svg > svg.rotate---90.height--20.width--20 {
+  transform: none !important;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+}
+.js-progress-svg > svg > circle {
+  transform: rotate(270deg) !important;
+  transform-origin: 50% 50%;
+}
+.js-character-count.margin-r--6.txt-line-height--20.txt-size--12 {
+  margin-right: 20px !important;
+  line-height: 25px !important;
+  font-weight: bold;
+  position: relative;
+  bottom: 8px;
+}
+.compose-text-container > .txt-right.margin-b--11.margin-r--7 {
+  margin: 0 !important;
+}
+.js-inline-reply .cjp {
+  margin-left: 10px !important;
+}
+.compose .cjp {
+  margin-right: 10px !important;
+}
+.thread.dot-thread {
+  left: calc(4% + 27px) !important;
+  margin-top: 20px;
+}
+.js-conversation-show-more.padding-v--10,
+.dark .js-conversation-show-more.padding-v--10,
+.js-stream-item.gap-chirp{
+  height: 36px !important;
+  width: 40% !important;
+  min-width: 150px;
+  margin: 16px auto;
+  padding: 0 !important;
+  border-radius: 18px !important;
+  line-height: 36px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+}
+.js-stream-item.gap-chirp .js-expand-gap.padding-v--18,
+.js-stream-item.gap-chirp .gap-chirp-text.padding-v--4.padding-h--16 {
+  padding: 0 !important;
+  font-weight: bold;
+}
+.js-add-to-customtimeline.padding-hm.flex-shrink--0 {
+  height: 66px !important;
+  padding: 0 !important;
+}
+.js-add-to-customtimeline > .InputGroup.margin-t--8 {
+  margin: 0 !important;
+}
+.js-add-to-customtimeline-input {
+  margin-top: -18px !important;
+  margin-bottom: 36px !important;
+  height: 48px !important;
+}
+.js-add-to-customtimeline-button {
+  height: 28px !important;
+  width: 28px !important;
+  top: -8px !important;
+  right: calc(4% + 10px) !important;
+}
+.media-badge[data-testid='pollBadge'] {
+  padding: 4px 8px !important;
+}
+.js-compose-scroller > .antiscroll-inner.padding-h--15 {
+  padding: 0 4% !important;
+}
+.js-compose-header {
+  padding: 0 16px;
+}
+.js-account-selector-grid-toggle {
+  border-radius: 32px;
+  padding: 4px 16px !important;
+  margin-top: 16px !important;
+}
+.compose .js-compose-header  .icon-close.margin-v--20 {
+  margin: 15px 0 0 !important;
+}
+.js-account-list {
+  margin-top: -50px !important
+}
+.compose .compose-text-container.padding-a--10 {
+  padding: 12px !important;
+}
+  .js-add-image-button.full-width.padding-v--6.padding-h--12,
+  .js-schedule-button.full-width.padding-v--6.padding-h--12,
+  .js-tweet-type-button > button.full-width.padding-v--6.padding-h--12 {
+    width: 34px !important;
+    height: 34px !important;
+    padding: 0 !important;
+    line-height: 34px !important;
+    text-align: center !important;
+  }
+  .js-add-image-button,
+  .js-scheduler,
+  .js-tweet-type-button {
+    display: inline-block !important;
+    margin-right: 12px !important;
+    position: relative;
+    bottom: 64px;
+  }
+  .js-schedule-button.is-disabled,
+  .js-tweet-type-button > button.is-disabled {
+    opacity: 1 !important
+  }
+.js-compose-message-account {
+  border-radius: 32px !important;
+  padding: 0 8px !important;
+}
+.compose .js-typeahead-dropdown.padding-v--0 {
+  position: static !important;
+  border-radius: 20px !important;
+  margin: 16px 0 24px !important;
+  padding: 12px !important;
+}
+.js-compose-message-recipient {
+  margin-right: 12px !important;
+  margin-bottom: 12px !important;
+  padding: 4px !important;
+}
+.js-compose-text ~ .lst-modal.typeahead {
+  position: static !important;
+  overflow: visible !important;
+  margin: -28px 8px 36px !important;
+  padding: 4px !important;
+  border-radius: 16px !important;
+}
+.js-quote-tweet-holder.padding-a--10.margin-t---4 {
+  padding: 0 !important;
+  margin: 12px 0 18px !important;
+}
+.compose .js-quote-detail .account-link > .obj-left {
+  opacity: 0;
+  pointer-events: none !important;
+}
+.js-quote-tweet-remove {
+  top: 6px !important;
+  right: 6px !important;
+}
+.js-in-reply-to.margin-b---4.br-top--4 {
+  margin-bottom: 12px !important;
+  border-radius: 16px !important;
+}
+.js-in-reply-to-remove {
+  top: 0 !important;
+  right: 0 !important;
+}
+.js-modal-panel,
+.js-modal-inner {
+  min-height: 100vh !important;
+}
+.mdl-header-title {
+  display: block !important;
+  line-height: 50px !important;
+  font-weight: bold !important;
+}
+.mdl-header.padding-a--12,
+.dark .mdl-header.padding-a--12 {
+  padding: 0 16px !important;
+}
+.mdl-dismiss {
+  margin: 5px !important;
+}
+.js-modal:not(#actions-modal) .mdl-inner {
+  padding: 0 4% !important;
+  top: 155px !important;
+  position: absolute !important;
+  width: 100% !important;
+}
+.mdl-content:not(button) {
+  width: 100% !important;
+  margin-top: -55px !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+.lst-launcher {
+  grid-gap: 32px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+#open-modal .js-item-launch {
+  border-radius: 16px !important;
+}
+.js-item-launch > a {
+  transform: none !important;
+}
+.js-item-launch .column-type-icon {
+  line-height: 75px !important;
+}
+.js-app > div:not(#lists-modal) .l-column:first-child {
+  margin-bottom: 25px !important;
+  padding: 0 2% !important;
+}
+.l-column.mdl-column-med {
+  border-radius: 24px !important;
+}
+.js-modal:not(#actions-modal) .mdl-buttonbar {
+  margin-top: 25px !important;
+}
+.l-column-scrollv {
+  width: 96% !important;
+}
+.lst-group li {
+  padding: 4px !important;
+}
+.lst-group > input.margin-h--8.padding-h--8,
+.search-input-list input,
+.dark .search-input-list input {
+  width: 96% !important;
+  height: 36px !important;
+  border-radius: 18px !important;
+  margin: 0 2% !important;
+  padding: 12px !important;
+}
+.js-left-pinned-bottom button.margin-al {
+  margin-left: 16px !important;
+}
+.js-modals-container fieldset {
+  margin-top: 24px !important;
+  max-width: 100vw !important;
+  width: 92% !important;
+  margin: 36px auto 0 !important;
+}
+.js-modals-container fieldset > div {
+  min-height: 46px !important;
+  width: 100% !important;
+  max-width: 92vw !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  flex-direction: row-reverse !important;
+  float: none !important;
+}
+.js-modals-container fieldset > div > .control-label {
+  flex-basis: calc(100% - 300px) !important;
+  flex-shrink: 0 !important;
+  order: 1;
+}
+.js-modals-container fieldset > div > .controls {
+  margin: 0 !important;
+  flex-basis: 300px !important;
+  flex-shrink: 0 !important;
+  order: 0;
+}
+.js-modals-container fieldset > div > .controls.width--300 {
+  order: 2 !important;
+}
+.js-modal-content >.padding-h--15,
+.dark .js-modal-content >.padding-h--15 {
+  padding: 0 !important
+}
+.js-modals-container fieldset > div  button.js-submittable-input {
+  position: absolute !important;
+  right: 0 !important;
+}
+.js-modals-container fieldset > div.pull-right {
+  position: relative !important;
+}
+.js-modals-container .js-dismiss:not(button) {
+  top: 18px !important;
+  right: 4% !important;
+}
+.js-modals-container .js-modal-content > .width--490 {
+  width: 100% !important;
+}
+#lists-modal .column-header > h1 {
+  font-size: 16px !important;
+}
+#lists-modal .column-header {
+  padding: 0 16px !important;
+}
+#lists-modal .list-listmember {
+  border-radius: 16px !important;
+  margin: 20px 4% !important;
+  padding: 12px !important;
+}
+.js-copy-users-input,
+.js-multiple-users-input {
+  border-radius: 16px !important;
+  padding: 12px !important;
+}
+.lst-group > div.margin-a--16,
+.dark .lst-group > div.margin-a--16 {
+  margin: 16px 0 !important;
+}
+.l-column > .js-left-pinned.width-p--85 {
+  width: 100% !important;
+}
+.js-add-multiple,
+.dark .js-add-multiple {
+  top: 16px !important;
+  right: calc(2% + 16px) !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+#settings-modal .l-column-scrollv,
+.dark #settings-modal .l-column-scrollv,
+.js-setting-list {
+  overflow: visible !important;
+}
+#settings-modal .lst-group {
+  display: flex !important;
+  gap: 24px !important;
+}
+#settings-modal .lst-group > li {
+  border-radius: 25px !important;
+  padding: 0 !important;
+}
+#settings-modal .l-column-scrollv {
+  width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+#global_filter_settings .js-add-filter-container {
+  position: relative;
+}
+#global_filter_settings .js-add-filter {
+  position: absolute !important;
+  right: 0 !important;
+}
+#global_filter_settings .js-filter-list {
+  margin-top: 64px !important;
+}
+#global_filter_settings .list-filter {
+  border-radius: 15px !important;
+  padding: 0 12px !important;
+  min-height: 30px !important;
+  line-height: 30px !important;
+  margin: 24px 90px 24px 0 !important;
+}
+#global_filter_settings .js-remove-filter {
+  right: -90px !important;
+  top: 0px !important;
+}
+#global-settings .frm {
+  padding: 0 !important;
+}
+#actions-modal .cf.padding-r--20 {
+  padding: 0 !important;
+  margin: 24px 4% 0 !important;
+}
+#actions-modal .mdl-inner {
+  padding: 0 !important;
+  margin: 24px 0 0 !important;
+}
+#actions-modal .mdl-inner > .js-account-selector-container {
+  width: 92% !important;
+  margin: 0 4% !important;
+}
+#actions-modal .js-inreply {
+  margin: 0 4% !important;
+  min-height: 76px !important;
+  border-radius: 16px !important;
+}
+.embed-modal .js-modal-content > div > .margin-h--15 {
+  margin: 24px 0 0 !important;
+}
+.js-embed-textarea {
+  border-radius: 16px !important;
+  padding: 12px !important;
+  height: 240px !important;
+}
+.js-embed-textarea + label,
+.embed-modal .js-modal-content > div > .margin-h--15 + b,
+.js-embed-iframe-container.margin-h--7,
+.dark .js-embed-iframe-container.margin-h--7 {
+  margin-left: 4% !important;
+}
+.js-modal-inner {
+  max-width: none !important;
+  display: block !important;
+}
+.js-modals-container .js-modal-content > .width--490 > .flex > input {
+  display: block !important;
+  width: 92% !important;
+  margin: 16px 4% 0 !important;
+  padding: 0 12px !important;
+  border-radius: 16px !important;
+  height: 32px !important;
+}
+.js-modals-container .js-modal-content > .width--490 > .flex > .js-copy-button {
+  display: block !important;
+  margin: 16px 4% 0 auto !important;
+}
+.js-modals-container .js-modal-content > .width--490 > .flex {
+  display: block !important;
+}
+.js-modal-content.margin-hxl,
+.dark .js-modal-content.margin-hxl {
+  margin: 0 !important;
+}
+.js-modals-container .js-component > .js-follow-from,
+.js-modals-container .js-modal-content > .l-table.padding-al{
+  padding: 0 !important;
+}
+.js-modals-container .js-component,
+.js-modals-container .js-modal-content > .l-table {
+  margin: 16px 4% !important;
+  width: 92% !important;
+}
+.js-modals-container .js-modal-content > .l-table .js-btn-fav {
+  margin-right: 12px !important;
+}
+#actions-modal .control-group > li.margin-b--10 {
+  width: 92% !important;
+  margin: 16px 4% !important;
+  padding: 12px !important;
+  border-radius: 18px !important;
+}
+#actions-modal .frm {
+  padding: 0 !important;
+  margin-top: 22px !important;
+}
+#actions-modal .frm > fieldset > ul {
+  margin-bottom: 25px !important;
+  padding: 33px 0 12px !important;
+  max-height: calc(100vh - 130px - 4vmin) !important;
+  overflow-y: scroll !important;
+  overflow-x: visible !important;
+}
+#actions-modal .frm > .js-create-list {
+  display: inline-block !important;
+  height: 28px !important;
+  margin: 15px 4% 0 !important;
+  padding: 3px 12px !important;
+  border-radius: 14px !important;
+  line-height: 22px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+#actions-modal .mdl-buttonbar {
+  margin: -43px 0 0 !important;
+  padding-right: 4% !important;
+}
+.js-modals-container .modal-content-with-border {
+  margin-top: 24px !important;
+  height: 450px !important;
+  overflow: hidden !important;
+  padding: 8px !important;
+}
+.js-modals-container .modal-content-with-border > .report-flow {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.js-modals-container button.js-dismiss.Button--primary {
+  position: static !important;
+  margin: 0 4% 0 0 !important;
+}
+.js-modals-container footer.padding-axl.txt-center {
+  text-align: right !important;
+  padding: 24px 0 0 !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header {
+  width: 92% !important;
+  margin: 4vmin 4% 0 !important;
+  border-radius: 25px !important;
+  overflow: hidden !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header-inner-overlay {
+  width: 100% !important;
+  height: 100% !important;
+  background-image: none !important;
+  backdrop-filter: blur(3px) !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header > div {
+  text-align: left !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+  -webkit-text-stroke-width: .5px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header > div a.link-complex,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header > div a.prf-siteurl,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header > div a.url-ext {
+  -webkit-text-stroke-width: .3px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-follow-status {
+  border-radius: 10px !important;
+  font-size: 9px !important;
+  padding: 3px 10px !important;
+  text-transform: none !important;
+  -webkit-text-stroke-width: 0 !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-meta {
+  padding: 0 4% !important;
+  display: flex !important;
+  flex-direction: column-reverse !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats {
+  float: none !important;
+  text-transform: none !important;
+  width: 100% !important;
+  margin-top: 20px !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: space-between;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li {
+  flex-shrink: 0 !important;
+  flex-grow: 1 !important;
+  flex-basis: 100px !important;
+  border-radius: 12px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li > .js-action-url {
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-follow-state.padding-al {
+  padding: 0 !important;
+  float: none !important;
+  text-align: right !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-follow-state > .js-action-follow {
+  display: inline-block !important;
+  margin: 12px 0 !important;
+  max-width: 200px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button {
+  margin-right: 8px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-user-actions-menu > .icon-more::before {
+  content: '\\f650' !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-social-proof.padding-al {
+  padding: 0 !important;
+  margin: -42px 4% 16px !important;
+  width: calc(92% - 200px) !important;
+  min-height: 26px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-animating {
+  height: unset !important;
+  transition: none !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .lst-profile {
+  display: flex !important;
+  justify-content: space-between;
+  gap: 12px;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-decoration: none !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch {
+  height: 65px !important;
+  border-radius: 12px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a > i {
+  line-height: 34px !important;
+  margin: 0 !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header a.prf-siteurl::before,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header p.location + p.js-show-tip::before,
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header p.location::before {
+  color: #fff !important;
+  font-family: tweetdeckregular !important;
+  font-size: 14px !important;
+  margin-right: 3px !important
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header a.prf-siteurl {
+  display: block !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header p.location {
+  margin-top: 8px !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header p.location + p.js-show-tip {
+  margin: 0 !important;
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header a.prf-siteurl::before {
+  content: '\\f098' !important
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header p.location::before {
+  content: '\\f031' !important
+}
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header p.location + p.js-show-tip::before {
+  content: '\\f203' !important
+}
+.js-search .js-search-form.margin-a--10 {
+  margin: 0 !important;
+}
+.js-search .js-search-input-control {
+  display: flex !important;
+}
+.js-search .js-app-search-input {
+  width: calc(100% - 48px) !important;
+  height: 34px !important;
+  margin: 8px 8px 8px 40px !important;
+}
+.js-search .js-perform-search {
+  inset: auto !important;
+  margin: 0 !important
+}
+.js-search .js-perform-search > i {
+  font-size: 20px !important;
+  line-height: 50px !important;
+  margin-left: 10px !important;
+}
