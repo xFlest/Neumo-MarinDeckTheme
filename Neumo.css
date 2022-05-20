@@ -128,7 +128,10 @@ html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-follow-sta
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch,
-html:not(.dark) .js-search-in-popover > .js-popover {
+html:not(.dark) .js-search-in-popover > .js-popover,
+html:not(.dark) .js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear,
+html:not(.dark) .js-search .js-search-form > .js-search-input-control,
+html:not(.dark) .js-search .js-dropdown-container.column-background-fill {
   background-color: var(--nm-light-bg) !important;
 }
 html:not(.dark) .js-column-header,
@@ -187,7 +190,8 @@ html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-header,
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch,
-html:not(.dark) .js-search .js-search-input-control {
+html:not(.dark) .js-search .js-search-input-control,
+html:not(.dark) .js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear {
   box-shadow: var(--nm-light-shadow) !important;
 }
 html:not(.dark) .js-column .js-quote-detail,
@@ -243,7 +247,9 @@ html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-foll
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu:active,
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch:active,
 html:not(.dark) .quoted-tweet-unavailable,
-html:not(.dark) .js-search .js-app-search-input {
+html:not(.dark) .js-search .js-app-search-input,
+html:not(.dark) .js-search .js-typeahead-dropdown > :not(.is-invisible) + ul,
+html:not(.dark) .js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear:active {
   box-shadow: var(--nm-light-inshadow) !important;
 }
 html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .icon-reply,
@@ -264,6 +270,7 @@ html:not(.dark) :is(.tweet-footer, .tweet-detail-actions) .js-icon-favorite.icon
   text-shadow: var(--nm-light-favshadow) !important;
 }
 html:not(.dark) .column-header .column-header-link,
+html:not(.dark) .column-header > .column-scroller,
 html:not(.dark) .accordion .is-active .accordion-header,
 html:not(.dark) .accordion .is-active .accordion-header:hover,
 html:not(.dark) .js-send-button,
@@ -304,8 +311,21 @@ html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-foll
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-names,
 html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-names > a,
-html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a > i {
+html:not(.dark) .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a > i,
+html:not(.dark) .js-search  .js-perform-search > .icon-search,
+html:not(.dark) .js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear,
+html:not(.dark) .js-search .js-typeahead-item.list-item:active .list-icon,
+html:not(.dark) .js-search .js-typeahead-item.list-item:hover .list-icon,
+html:not(.dark) .js-search .js-typeahead-item.list-item.is-selected .list-icon,
+html:not(.dark) .js-search .js-typeahead-item.list-item:active .txt-mute,
+html:not(.dark) .js-search .js-typeahead-item.list-item:hover .txt-mute,
+html:not(.dark) .js-search .js-typeahead-item.list-item.is-selected .txt-mute {
   color: #8899a6 !important;
+}
+html:not(.dark) .js-search .js-typeahead-item.list-item:active,
+html:not(.dark) .js-search .js-typeahead-item.list-item:hover,
+html:not(.dark) .js-search .js-typeahead-item.list-item.is-selected {
+  color: #657786 !important;
 }
 html:not(.dark) .js-compose-header > .compose-title,
 html:not(.dark) .compose-account-names > b,
@@ -404,7 +424,10 @@ html:not(.dark) #open-modal .js-item-launch:is([data-type='privateMe'], [data-ty
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch,
-.dark .js-search-in-popover > .js-popover {
+.dark .js-search-in-popover > .js-popover,
+.dark .js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear,
+.dark .js-search .js-search-form > .js-search-input-control,
+.dark .js-search .js-dropdown-container.column-background-fill {
   background-color: var(--nm-dark-bg) !important;
 }
 .dark .js-column-header,
@@ -463,7 +486,8 @@ html:not(.dark) #open-modal .js-item-launch:is([data-type='privateMe'], [data-ty
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow > .js-follow-button > button,
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch,
-.dark .js-search .js-search-input-control {
+.dark .js-search .js-search-input-control,
+.dark .js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear {
   box-shadow: var(--nm-dark-shadow) !important;
 }
 .dark .js-column .js-quote-detail,
@@ -519,7 +543,9 @@ html:not(.dark) #open-modal .js-item-launch:is([data-type='privateMe'], [data-ty
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu:active,
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch:active,
 .dark .quoted-tweet-unavailable,
-.dark .js-search .js-app-search-input {
+.dark .js-search .js-app-search-input,
+.dark .js-search .js-typeahead-dropdown > :not(.is-invisible) ~ ul,
+.dark .js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear:active {
   box-shadow: var(--nm-dark-inshadow) !important;
 }
 .dark :is(.tweet-footer, .tweet-detail-actions) .icon-reply,
@@ -540,6 +566,7 @@ html:not(.dark) #open-modal .js-item-launch:is([data-type='privateMe'], [data-ty
   text-shadow: var(--nm-dark-favshadow) !important;
 }
 .dark .column-header .column-header-link,
+.dark .column-header > .column-type-icon,
 .dark .accordion .is-active .accordion-header,
 .dark .accordion .is-active .accordion-header:hover,
 .dark .js-send-button,
@@ -586,7 +613,10 @@ html:not(.dark) #open-modal .js-item-launch:is([data-type='privateMe'], [data-ty
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-names,
 .dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .social-proof-names > a,
-.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a > i {
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a > i,
+.dark .js-search .js-perform-search > .icon-search,
+.dark .js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear,
+.dark .js-search .js-typeahead-dropdown > ul > h4.color-twitter-darker-gray {
   color: #ffffff !important;
 }
 .dark .js-action-header-button.Button--danger,
@@ -597,7 +627,13 @@ html:not(.dark) #open-modal .js-item-launch:is([data-type='privateMe'], [data-ty
 .dark .compose-account-selected i:is(.color-twitter-white, .icon-check) {
   color: var(--nm-dark-bg) !important;
 }
-.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li > .js-action-url:hover {
+.dark .js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-stats > li > .js-action-url:hover,
+.dark .js-search .js-typeahead-item.list-item:active .list-icon,
+.dark .js-search .js-typeahead-item.list-item:hover .list-icon,
+.dark .js-search .js-typeahead-item.list-item.is-selected .list-icon,
+.dark .js-search .js-typeahead-item.list-item:active .txt-mute,
+.dark .js-search .js-typeahead-item.list-item:hover .txt-mute,
+.dark .js-search .js-typeahead-item.list-item.is-selected .txt-mute {
   color: #8899a6 !important;
 }
 .dark .compose-account-selected {
@@ -667,7 +703,10 @@ button.full-width[data-action='edit-list'],
 .js-setting-list,
 #settings-modal .divider-bar,
 #actions-modal .mdl-inner,
-.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-meta {
+.js-modals-container :not(.md-mdlprf) > .prf.mdl .prf-meta,
+.js-search .js-typeahead-item.list-item:active,
+.js-search .js-typeahead-item.list-item:hover,
+.js-search .js-typeahead-item.list-item.is-selected {
   background-color: #0000 !important;
 }
 
@@ -781,7 +820,8 @@ div[data-testid='trend'],
 .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-action-follow .js-user-actions-menu,
 .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-item-launch > a,
 .quoted-tweet-unavailable,
-.js-search .js-app-search-input {
+.js-search .js-app-search-input,
+.js-search .js-typeahead-lists-list.list-divider {
   border: 0 !important;
 }
 .js-add-to-customtimeline-button:hover,
@@ -791,7 +831,6 @@ div[data-testid='trend'],
 #settings-modal .mdl-content > div.mdl-column-sml {
   box-shadow: none !important;
 }
-
 
 .js-stream-item,
 [data-testid='columnOptions']{
@@ -814,7 +853,8 @@ div[data-testid='trend'],
 .js-modals-container .modal-content-with-border,
 .social-proof-for-tweet-title,
 .js-modals-container :not(.md-mdlprf) > .prf.mdl .js-profile-columns,
-.js-search .js-search-input-control {
+.js-search .js-search-input-control,
+.js-search .js-typeahead-dropdown > ul {
   width: 92% !important;
   margin-right: 4% !important;
   margin-left: 4% !important;
@@ -1073,27 +1113,27 @@ button.full-width[data-action='edit-list'],
 .compose .compose-text-container.padding-a--10 {
   padding: 12px !important;
 }
-  .js-add-image-button.full-width.padding-v--6.padding-h--12,
-  .js-schedule-button.full-width.padding-v--6.padding-h--12,
-  .js-tweet-type-button > button.full-width.padding-v--6.padding-h--12 {
-    width: 34px !important;
-    height: 34px !important;
-    padding: 0 !important;
-    line-height: 34px !important;
-    text-align: center !important;
-  }
-  .js-add-image-button,
-  .js-scheduler,
-  .js-tweet-type-button {
-    display: inline-block !important;
-    margin-right: 12px !important;
-    position: relative;
-    bottom: 64px;
-  }
-  .js-schedule-button.is-disabled,
-  .js-tweet-type-button > button.is-disabled {
-    opacity: 1 !important
-  }
+.js-add-image-button.full-width.padding-v--6.padding-h--12,
+.js-schedule-button.full-width.padding-v--6.padding-h--12,
+.js-tweet-type-button > button.full-width.padding-v--6.padding-h--12 {
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  line-height: 34px !important;
+  text-align: center !important;
+}
+.js-add-image-button,
+.js-scheduler,
+.js-tweet-type-button {
+  display: inline-block !important;
+  margin-right: 12px !important;
+  position: relative;
+  bottom: 64px;
+}
+.js-schedule-button.is-disabled,
+.js-tweet-type-button > button.is-disabled {
+  opacity: 1 !important
+}
 .js-compose-message-account {
   border-radius: 32px !important;
   padding: 0 8px !important;
@@ -1579,16 +1619,41 @@ button.full-width[data-action='edit-list'],
   display: flex !important;
 }
 .js-search .js-app-search-input {
-  width: calc(100% - 48px) !important;
+  width: calc(100% - 56px) !important;
   height: 34px !important;
-  margin: 8px 8px 8px 40px !important;
+  margin: 8px 8px 8px 48px !important;
 }
 .js-search .js-perform-search {
   inset: auto !important;
   margin: 0 !important
 }
-.js-search .js-perform-search > i {
+.js-search .js-perform-search > i,
+.dark .js-search .js-perform-search > i {
   font-size: 20px !important;
   line-height: 50px !important;
-  margin-left: 10px !important;
+  margin-left: 19px !important;
+  width: 26px !important;
+}
+.js-search .js-typeahead-dropdown > ul:not(.is-invisible) {
+  border-radius: 4vmin !important;
+  margin-top: 32px !important;
+  padding: 8px !important;
+  height: auto !important;
+}
+.js-search .js-typeahead-dropdown > ul > h4 {
+  margin: -42px 0 12px -8px !important;
+  padding-left: 0 !important;
+}
+.js-search .js-typeahead-dropdown > .js-typeahead-recent-search-clear.pull-right {
+  float: none !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  font-weight: bold !important;
+  width: fit-content !important;
+  margin: 12px 4% -24px auto !important;
+  padding: 6px 12px !important;
+  border-radius: 28px !important;
+}
+.js-search .js-search-results-container > .js-user-results {
+  height: calc(100% - 38px) !important;
 }
